@@ -3,9 +3,12 @@ import mongoose from "mongoose";
 const connectDB = async () => {
     mongoose.connection.on('connected',()=>{
         console.log('Database Connected');
+        console.log(process.env.MONGO_URI);
         
     })
-    await mongoose.connect(`${process.env.MONGO_URI}/bg-remover`)
+    await mongoose.connect(`${process.env.MONGO_URI}`)
+    
+    // await mongoose.connect(`${process.env.MONGO_URI}/bg-remover`)
 }
 
 export default connectDB

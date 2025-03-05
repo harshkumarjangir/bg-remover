@@ -1,8 +1,8 @@
 import express from 'express'
 import { clerkWebHooks } from '../controllers/UserController.js'
 
-const userRouter = express.Router()
+const userRoutes = express.Router()
 
-userRouter.post('/webhooks', clerkWebHooks)
+userRoutes.post('/webhooks', clerkWebHooks)
 
-export default userRouter
+export default userRoutes
