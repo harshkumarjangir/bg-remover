@@ -4,8 +4,21 @@ import userModel from '../models/userModel.js'
 // API Controller Function to Manage Clerk User with database.
 // http://localhost:4000/api/user/webhooks
 
+const aman = async (req, res) => {
+    try {
+        res.send("Aman Webhook is working fine")
+        return
+    } catch (error) {
+        console.log(error.message);
+        res.json({ success: false, message: error.message })
+    }
+}
+
 const clerkWebHooks = async (req, res) => {
     try {
+
+        res.send("Clerk Webhook is working fine")
+        return
         // Create Svix instance with clerk webhook secret.
         const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
 
@@ -58,4 +71,4 @@ const clerkWebHooks = async (req, res) => {
     }
 }
 
-export { clerkWebHooks }
+export { clerkWebHooks, aman }
