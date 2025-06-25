@@ -6,5 +6,6 @@ const userRoutes = express.Router()
 userRoutes.post('/webhooks', clerkWebHooks)
 userRoutes.get('/webhooks', clerkWebHooks)
 userRoutes.get('/aman', aman)
+userRoutes.post('/aman', aman)
 
 export default userRoutes
